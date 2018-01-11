@@ -1,1 +1,34 @@
 #Notes for HTML portion of - The Odin Project | Web Developer 101 | HTML and CSS Basics - by Codecademy
+
+01-11-2018 04:13pm
+What is HTML?
+-HTML is the language used to create the websites you visti every day. It provides a logical way to structure content for websites.
+-HTML stands for HyperText Markup Language
+-A markup language is a computer lanaguage that defines the structure and presentation of raw text, done so by surrounding raw text with information that the computer can interpret (Ex: <h1>Hello</h1>).
+-HyperTest is text displayed on a computer or device that provides access to other text through links, also known as 'hyperlinks'.
+
+!DOCTYPE
+-In order for a computer to correctly interpret information, it must be told what language the document is is written in before it can process its contents.
+-For HTML, there is what is called a decleration. The decleration must be the first line of code in all HTML documents.
+-The decleration for HTML is '<!DOCTYPE html>'
+-If not used, the browser will simply interpret the code through whichever standard may be being used at the time, which can cause conflicts.
+-By using the <!DOCTYPE html> we are declaring to the browser what type of language is being used. Even as new standards go on to replace current HTML5, so long as we declare it correctly at the beginning, the browser will know how to correctly interpret the code with the appropriate language.
+
+<html>
+-In order to start adding HTML structure and content, we must first add the <html> tags to the document. 
+-Everything between the <html> and </html> tags will be interpreted as HTML code.
+
+<head>
+-The <head> element contains the metadata for a web page.
+-Metadata is information about the page that isn't displayed directly on the web page.
+
+Page Titles
+-Included on almost all web pages is the title.
+-By adding <title>[name goes here</title> inside the <head> element, we can tell the browser what the title of our web page is.
+-The content inside the <title> tags does not show up directly on the web page. Instead it can be seen in a title bar, or in a browser tab.
+
+<body>
+-Before we can add conten that a browser will display, we have to add a body to the HTML file.
+-Only content inside the opening and closeing body tags can be displayed to the screen.
+-Once the file has a body, many different types of content - including text, images, and buttons - can be added to the body.
+-Tags for the body are as expected... <body></body>
