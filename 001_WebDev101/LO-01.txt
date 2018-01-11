@@ -1,0 +1,12 @@
+Q1) What is the role of HTML in a web page?
+
+Q2) What is the role of CSS in a web page?
+
+Q3) What is the role of Javascript in a web page?
+
+
+A1) HTML provides the structure of the webpage content. It contains the basic information needed for the webpage, such as: paragraphs, bullet points, images, data tables, etc.
+
+A2) CSS provides the styling for the webpage. Keeping the HTML in mind, CSS can be used to alter colors, backgrounds, text font, where the content is displayed, and more.
+
+A3) JavaScript provides interactive features for the webpage, such as: games, buttons that can be clicked for forms, dynamic styling effects, animation, and more.
