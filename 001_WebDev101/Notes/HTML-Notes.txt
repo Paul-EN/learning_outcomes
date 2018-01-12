@@ -1,6 +1,6 @@
 #Notes for HTML portion of - The Odin Project | Web Developer 101 | HTML and CSS Basics - by Codecademy
 
-01-11-2018 04:13pm
+01-11-2018
 What is HTML?
 -HTML is the language used to create the websites you visti every day. It provides a logical way to structure content for websites.
 -HTML stands for HyperText Markup Language
@@ -15,7 +15,7 @@ What is HTML?
 -By using the <!DOCTYPE html> we are declaring to the browser what type of language is being used. Even as new standards go on to replace current HTML5, so long as we declare it correctly at the beginning, the browser will know how to correctly interpret the code with the appropriate language.
 
 <html>
--In order to start adding HTML structure and content, we must first add the <html> tags to the document. 
+-In order to start adding HTML structure and content, we must first add the <html> tags to the document.
 -Everything between the <html> and </html> tags will be interpreted as HTML code.
 
 <head>
@@ -32,3 +32,211 @@ Page Titles
 -Only content inside the opening and closeing body tags can be displayed to the screen.
 -Once the file has a body, many different types of content - including text, images, and buttons - can be added to the body.
 -Tags for the body are as expected... <body></body>
+
+Self-closing tags
+-There are a few tags which do not require both the opening and closing tag. These are termed 'self-closing tags'.
+-One example of a self-closing tag would be the <br /> tag (line break).
+-Because they are a single tag, they cannot be used to wrap raw text or other elements.
+-An example of the <br /> tag would be: <p>line one<br />line two</p>, which would result in...
+    line one
+    line two
+
+HTML Structure
+-HTML documents are organzied as a collection of parent-child relationships. When an element is contained inside another element, it is considered the child of that element. The child is said to be nested inside of the parent element.
+-For example:
+  <body>
+    <p>Paragraph</p>
+  </body>
+  Here we can see that the <p>Paragraph</p> is 'nested' inside of the <body> elements.
+-Nesting can extend as much as necessary.
+-It is important to keep track of nesting as the child elements can inherit properties from their parent elements.
+
+Whitespace
+-As the code in an HTML file growns, it becomes increasingly difficult to keep track of how elements are related. Programmers use two tools to visualize the relationship between elements: whitespace and indentation.
+-Both tools take advantage of the fact that the position of elements in a browser is independent of the amount of whitespace or indentation in the index.html file.
+-Example:
+    <body><p>Paragraph 1</p><p>Paragraph 2</p></body>
+    is the same as
+    <body>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+    </body>
+    but the second is much easier to read as each elements has its own line.
+
+Indentation
+-The second tool used to make reading code easier is indentation.
+-The World Wide Web Consortium, or W3C, is responsible for maintaining the style standards of HTML.
+-At this time, the W3C recommends 2 spaces of indentation when writing in HTML.
+-The purpose of indentation is to aid in the visualizing of elements nested in other elements.
+-Example:
+    <body>
+      <p>Paragraph 1</p>
+      <div>
+        <p>Paragraph 2</p>
+      </div>
+    </body>
+
+Comments
+-An important feature of HTML code is the comments tag
+    <!-- [insert comment here] -->
+-Comments are important because
+    1. They help you (and others) understand your code if you decide to come back and review it at a much later date.
+    2. They allow you to experiment with new code, without having to delete old code.
+-Example 1:
+    <!-- Favorite Films Section -->
+    <p>The following is a list of my favorite films:</p>
+-Example 2:
+    <!-- <p> Test Code </p> -->
+
+========================================================================================================
+
+    Review
+
+    Congratulations on completing the first lesson of HTML & CSS! You are well on your way to becoming a skilled web developer.
+
+    Let's review what you've learned so far:
+
+    1.HTML stands for HyperText Markup Language and is used to create the structure and content of a    webpage.
+    2.Most HTML elements contain opening and closing tags with raw text or other HTML tags between them.
+    3.Single-closing tags cannot enclose raw text or other elements.
+    4.Comments are written in HTML using the following syntax: <!-- comment -->.
+    5.HTML elements can be nested inside other elements. The enclosed element is the child of the enclosing parent element.
+    6.Whitespace between HTML elements helps make code easier to read while not changing how elements appear in the browser.
+    7.Indentation also helps make code easier to read. It makes parent-child relationships visible.
+    8.The <!DOCTYPE html> declaration should always be the first line of code in your HTML files.
+    9.The <html> element will contain all of your HTML code.
+    10.Information about the web page, like the title, belongs within the <head> of the page.
+    11.You can add a title to your web page by using the <title> element, inside of the head.
+    12.A webpage's title appears in a browser's tab.
+    13.Code for visible HTML content is placed inside of the <body> element.
+
+    What you learned in this lesson constitutes the required setup for all HTML files.
+
+========================================================================================================
+
+Headings
+-Spannings from <h1></h1> to <h6></h6>, each higher numbered heading is smaller in size.
+-An h1 heading is the largest, and meant to grab the readers attention. Also referred to as the main heading. All other headings are referred to as subheadings.
+
+Paragraphs
+-Written as <p></p>. They simply contain a block of plain text.
+
+Divide
+-Written as <div></div>. This element can play parent to any text or other HTML elements. It is primarily used to divide HTML into sections.
+
+Span
+-Written as <span></span>. They contain short pieces of text or other HTML. They are primarily used to wrap small pieces of content that are on the same line as other content and do not break into different sections.
+
+Text Style Tags
+-There are two style tags in particular that help in organizing and describing the content of web pages.
+-The first is the <em> tag, which will generally render as italic emphasis.
+-The second is the <strong> tag, which will generally render as bold emphasis.
+
+Line Break
+-Written as <br />
+-Self-closing tag
+-See line 36
+
+Unordered Lists
+-For this element we need to be familiar with two different tags.
+-First is the <ul></ul> tag, which indicates that we want to create a bullet list with individual list items.
+-Because the <ul> tag cannot itself hold raw text, we need to use the second tag, which is...
+-...the <li></li> tag, which indicates a new bullet point and displays the raw text written within it.
+
+Ordered Lists
+-Same concept as unordered lists, but this creates the list with numbers in series rather than simple bullet points.
+-Written as <ol></ol>
+
+Images
+-Written as <img src="image-location.com" />
+-Can be used to display images in the HTML web page.
+-Possesses a required attribute called src. The src attribute must be set to the image's source, or the location of the image.
+-Another example of a self-closing tag.
+
+Attributes
+-Helpful in that they provide more information about the element's content. They live directly inside of the opening tag of an element. Attributes are made up of the following two parts.
+    1. The name of the attribute
+    2. The value of the attribute.
+
+Image Alts
+-Example:
+    <img src="image-location.com" alt="A field of yellow sunflowers" />
+-HTML helps support visually impaired users with the alt attribute.
+-Suppose an image fails to load on a web page, with the alt attribute, the user can mouse over the area originally meant for the image and read a brief description of the image.
+-Visually impaired users often browse the web with the aid of screen reading software. When you include the alt attribute, the screen reading software can read the image's description out loud to the visually impaired user.
+
+Videos
+-In addition to images, HTML can also support videos using the <video> tag.
+-Also requires the src attribute
+-Unlike the <img> tag, however, the <video> tag also requires the closing tag </video>
+-The src must link to a video file. It cannot be linked to a video on another site.
+-After the src attribute, the width and and height attributes must be set.
+-Finally the controls attribute instructs the browser to include basic video controls: pause, play, and skip.
+-Between the opening and closing tags, we can write text to display in the even that the video is not supported by the browser.
+-Example of video tag in use:
+    <video src="myVideo.mp4" width="320" height="240" controls>
+      Video not supported
+    </video>
+
+Linking Out
+-There will be many times when you will need to create a link out to a different web page, either from your own web site or to a different website.
+-Example:
+      <a href="https://wikipedia.org/">This Is A Link To Wikipedia</a>
+-Here we can see that the tag to create the link is <a></a>
+-The <a> tag also needs to use the attribute href, which stands for hyperlink reference, to specify where the link will be taking the user (either to another web page/site, or another web page that you store locally)
+
+Linking at Will
+-It is possible to link to other web pages/sites using more than just text. Just about any element can be used to link.
+-Example of an image link:
+    <a href="https://en.wikipedia.org/wiki/Opuntia" target="_blank"><img src="#" alt="A red prickly pear fruit"/></a>
+-Notice the link element <a> is wrapped around the image element <img>
+
+New Page
+-The target attribute, used for when you want to open a link in a new window.
+-In order for the link to open in the new window you must include the _blank value as so...
+    <a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank">The Brown Bear</a>
+
+Relative
+-Suppose you want to link to a local web page. Unlike the links we've been noting so far, which use a URL address, for local web pages, we want to link to their corresponding .html file.
+-If a web page is located in the same directory as the current page you are on, you can use the . designation, similar to command terminal, which indicates that the path leads to the current folder.
+-Example of link to local .html file:
+    <a href="./contact.html">Contact</a>
+
+Linking Same Page
+-At times you may want to link to certain parts within the current web page you are viewing.
+-To do so, we would first need to assign an id to the element you wish to link to and afterwards link to it, but instead of using a URL or path to a local file, we use #[name]
+-Example:
+    <p id="top">This is the top of the page!</p>
+    <h1 id="bottom">This is the bottom!</h1>
+    then we would link to those elements with...
+    <ol>
+      <li><a href="#top">Top</a></li>
+      <li><a href="#bottom">Bottom</a></li>
+    </ol>
+
+Navigation
+-Is used to wrap links in order to organize the content on your web page.
+-Some tags such as <div> are non-semantic, meaning that they do not describe the properties that go within them.
+-Tags, such as the <nav> tag, is called semantic.
+
+========================================================================================================
+
+HTML Tags
+
+While some tags have a very specific purpose, such as image and video tags, most tags are used to describe the content that they surround, which helps us modify and style our content later. There are seemingly infinite numbers of tags to use (many more than we've taught). Knowing when to use each one is based on how you want to describe the content of your HTML. Descriptive, well-chosen tags are one key to high-quality web development. A full list of available HTML tags can be found here.
+
+You now know all of the basic elements you need to structure an HTML page and add different types of content. Very soon you’ll be creating beautiful websites!
+
+Let’s review what you’ve learned in this lesson:
+
+    1. Headings and sub-headings, <h1> to <h6> tags, are used to enlarge text.
+    <p>, <span> and <div> tags specify text or blocks.
+    2. The <em> and <strong> tags are used to emphasize text.
+    3. Line breaks are created with the <br> tag.
+    4. Ordered lists (<ol>) are numbered and unordered lists (<ul>) are bulleted.
+    5. Images (<img>) and videos (<video>) can be added by linking to an existing source.
+    6. Anchor tags (<a>) are used to link to internal pages, external pages or content on the same page.
+    7. You can create sections on a webpage and jump to them using <a> tags and addings ids to the elements you wish to jump to.
+    8. The nav element contains links to internal pages or content.
+
+========================================================================================================

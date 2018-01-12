@@ -1,13 +1,18 @@
     Why do we separate HTML and CSS?
     What are classes and IDs (and how are they different)?
     What are elements?
+      Elements are special code that identify the various components of an HTML file.
     What are tags?
+      Keywords written within <> brackets that specify to the web browser how to interpret and display the code.
     What are attributes?
+      Attributes can be used to assign names to tags, and to specify values to the tags.
     What are forms?
     What is a div?
+      div, short for divide, is a special type of tag where most all different types of elements can be nested in. It is typically used to section off different parts of an HTML file. div is classified as a non-semantic element, as its tag name does not serve to describe the contents within it.
     What are selectors?
     What are properties?
     What are values?
+      In reference to attributes, values are the parameters at which the attributes will operate. For example is you wanted to assign a specific width or height to an element, you could add the attributes width="###" and height="###"
     What is the “query string” in a URL and what does it do?
     What is the difference between “pixels” and “ems”?
     How do CSS styles for a particular element get inherited? i.e. how does an element get its “default” styles?
