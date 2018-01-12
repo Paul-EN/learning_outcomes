@@ -1,0 +1,162 @@
+#Notes for CSS portion of - The Odin Project | Web Developer 101 | HTML and CSS Basics - by Codecademy
+
+CSS
+-Stands for Cascading Style Sheets, is a language that web developers use to style the HTML content on a web page. If you're interested in modifying colors, font types, font sizes, shadows, images, element positioning, and more, CSS is the tool for the job.
+-Although CSS is a different language than HTML, it's possible to write CSS code directly within HTML code using inline styles.
+
+style
+-Using the style attribute, you can give HTML elements CSS qualities.
+-Example:
+    <p style="color: red;">I'm learning to code!</p>
+    to add more than one style to a single element, simple add it after the ;
+    <p style="color: red; font-size: 20px;">I'm learning to code!</p>
+
+<style> tag
+-Although you could get away with simply using the style attribute directly with the html elements, it would quickly become unmanageable, as you would have to add it to every element individually.
+-For this, we have the <style></style> tags, which allow to set up the styles for many elements at a time.
+-Example:
+    <head>
+      <style>
+        p {
+          color: red;
+          font-size: 20px;
+          }
+      </style>
+    </head>
+    This example would change the color and font size of all paragraph text.
+
+Keeping HTML and CSS separate
+-It is recommended that the CSS code be kept separate from the HTML in order to preserve the readability and maintainability of each file.
+-In order to do this, we create a separate file with the .css file extension.
+-Ex: style.css
+-So that the html file can recognize the css file, we need to link them together. For this we need to set up a <link> element that uses specific attributes: href, type (with text/css value), and rel (with stylesheet value).
+-Example:
+    <link href="./style.css" type="text/css" rel="stylesheet">
+
+Tag Name
+-In CSS you can select HTML elements using their element's tag name. The tag name is the word (or character) between the HTML angle brackets.
+-Ex:
+    The tag name for the paragraph element <p> is simply p
+-Ex:
+    p {
+
+    }
+    In this example, all paragraph elements will be selected using a CSS selector. The selector in this case is p. Note the CSS selector matches the HTML tag for that element, but without the angle brackets. After the selector, we must add the curly braces, which is where the CSS properties will go.
+
+Class Name
+-CSS is also able to select elements according to class name.
+-Ex:
+    <p class="brand">Sole Shoe Company</p>
+    To select for this class we simply type it in the CSS file as:
+    .brand {
+
+    }
+    Note the . at the beginning of the class. This indicates that the selector is for class.
+
+Multiple Classes
+-It is possible to assign multiple classes to a single HTML element.
+-For example, suppose we create two CSS styles:
+    .green {
+      color: green;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+    To assign both these CSS styles to an HTML element, we would write it as such:
+    <h1 class="green bold"> ... </h1
+
+ID Name
+-If an HTML element needs to be styled uniquely (no matter what classes are applied to the element), we can add an ID to the element. To add an ID to an element, the element needs an id attribute.
+-Ex:
+    <h1 id="large-title"> ... </h1>
+-Then, CSS can select HTML elements by their id attribute. To select an id element, CSS prepends the id name with a hashtag (#).
+-Ex:
+    When styling for a specific id, we write
+    #large-title {
+
+    }
+
+Classes and IDs
+-CSS can select HTML element by their tag, class, and ID. CSS classes and IDs have different purposes, which can affect which one you use to style HTML elements.
+-CSS classes are meant to be reused over many elements and can be mixed.
+-CSS IDs are meant to style only one element. IDs also override the styles of tags and classes.
+-Since IDs override class and tag styles, they should be used sparingly and only on elements that need to always appear the same.
+
+Specificity
+-Specificity is the order by which the browser decides which CSS styles will be displayed.
+-As best practice in CSS is to style elements while using the lowest degree of specificity, so that if an element needs a new style, it is easy to override.
+-IDs are the most specific selector in CSS, followed by classes, and finally, tags.
+-Suppose we had a tag styling that set the color of the text to whatever color. If we then added a class styling (that was used in a tag that was already styled), that class styling would override the tag styling. If we then added an ID styling, that ID styling would override both the class and tag styling.
+-The only way to override an ID is to add another ID with additional styling.
+-Attempt to style first with a tag selector, if not possible, then the class, and if that isn't possible, then the ID selector.
+
+Chaining Selectors
+-When writing CSS rules, it's possible to require an HTML element to have two or more CSS selectors at the same time.
+-This is done by combining multiple selectors, which we will refer to as chaining. For instance, if there was a .special class for h1 elements, the CSS would look like:
+    h1.special {
+
+    }
+    The code above would select only the h1 elements that have a class of special. If a p element also had a class of special, the rule in the example would not style the paragraph.
+
+Nested Elements
+-In addition to chaining selectors to select elements, CSS also supports selecting elements that are nested within other HTMl elements. For instance, consider the following HTML:
+    <ul class="main-list">
+      <li> ... </li>
+      <li> ... </li>
+      <li> ... </li>
+    </ul>
+    The nested <li> elements are selected with the following CSS:
+    .main-list li {
+
+    }
+    In the example above, the .main-list selects the .main-list element (the unordered list element). The nested <li> are selected by adding li to the selector, separated by a space, resulting in .main-list li as the final selector (note the space in the selector).
+-Selecting elements in this way can make our selectors even more specific by making sure they appear in the context we expect.
+-CSS selectors that target nested elements will override other more generic selectors.
+
+Important
+-There is one thing that is even more specific than IDs: !important.
+-!important can be applied to specific attributes insted of full rules. It will override any style no matter how specific it is. As a result, it should almost never be used. Once !important is used, it is very hard to override.
+-Ex:
+    p {
+      color: blue !important;
+    }
+
+    .main p {
+      color: red;
+    }
+    In this example, despite there already being a selector targeting a nested element, because of the !important marker, the color styling of p will take precedence over any other styling.
+
+Multiple Selectors
+-In order to make CSS more concise, it's possible to add CSS styles to multiple CSS selectors all at once. This prevents writing repetitive code.
+-Ex:
+    h1 {
+      font-family: Georgia;
+    }
+
+    .menu {
+      font-family: Georgia;
+    }
+    Instead of writing font-family: Georgia twice for two selectors, we can separate the selctors by a comma to apply the same style to both, like this:
+    h1,
+    .menu {
+      font-family: Georgia;
+    }
+
+========================================================================================================
+
+    Review CSS Selectors
+
+    Throughout this lesson, you learned how to select HTML elements with CSS and apply styles to them. Let's review what you learned:
+
+        1. CSS can change the look of HTML elements. In order to do this, CSS must select HTML elements, then apply styles to them.
+        2. CSS can select HTML elements by tag, class, or ID.
+        3. Multiple CSS classes can be applied to one HTML element.
+        4. Classes can be reusable, while IDs can only be used once.
+        5. IDs are more specific than classes, and classes are more specific than tags. That means IDs will override any styles from a class, and classes will override any styles from a tag selector.
+        6. Multiple selectors can be chained together to select an element. This raises the specificity, but can be necessary.
+        7. Nested elements can be selected by separating selectors with a space.
+        8. The !important flag will override any style, however it should almost never be used, as it is extremely difficult to override.
+        9. Multiple unrelated selectors can receive the same styles by separating the selector names with commas.
+
+========================================================================================================
