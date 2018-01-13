@@ -1,22 +1,63 @@
     Why do we separate HTML and CSS?
+      As the website continues to grow in size and complexity, having both HTML and CSS information on the same page would soon make the document difficult to read and maintain. For this reason, it has become standard practice that both the HTML and CSS information be kept of separate, but linked, files.
+
     What are classes and IDs (and how are they different)?
+      Classes can be thought of as customizable attributes that can be used to label specific HTML elements. IDs are similar, except they are meant to encompass a broader selection, and take priority over all other selectors. Classes and IDs differ in their use. While both are used to specify what HTML elements will be affected by the designated styles (as the selector), IDs take priority over class (and classes over tags). This means that if we have both a class and an ID selector that targets a certain piece of HTML with different styling, the computer will choose to display the styling of the ID instead of the class.
+
     What are elements?
       Elements are special code that identify the various components of an HTML file.
+
     What are tags?
       Keywords written within <> brackets that specify to the web browser how to interpret and display the code.
+
     What are attributes?
       Attributes can be used to assign names to tags, and to specify values to the tags.
+
     What are forms?
+
+
     What is a div?
       div, short for divide, is a special type of tag where most all different types of elements can be nested in. It is typically used to section off different parts of an HTML file. div is classified as a non-semantic element, as its tag name does not serve to describe the contents within it.
+
     What are selectors?
+      Selectors are used in CSS to identify which HTML elements, classes, and IDs are going to be affected by the desired styling.
+        Ex:
+            p {
+              color: red;
+            }
+            In this case, the selector is 'p'. This would change all the text located within <p></p> brackets to red.
+
     What are properties?
+      A property is what you are selecting to style in a particular element through the declaration.
+      Example:
+          h1 {
+            color: blue;
+          }
+          Looking at the declaration, 'color' is the property ('blue' is the value).
+
     What are values?
-      In reference to attributes, values are the parameters at which the attributes will operate. For example is you wanted to assign a specific width or height to an element, you could add the attributes width="###" and height="###"
+      In regards to attributes, values are the parameters at which the attributes will operate. An example is when you wanted to assign a specific width or height to an element, you could add the attributes width="###" and height="###" (# being the number).
+
     What is the “query string” in a URL and what does it do?
+
+
     What is the difference between “pixels” and “ems”?
+
+
     How do CSS styles for a particular element get inherited? i.e. how does an element get its “default” styles?
+
+
     What are two CSS attributes you can change to push an element around on the page?
+
+
     What are the three different ways to include CSS in your project or use CSS to style a particular element?
+      The first way to include CSS is directly, by adding it to the tag. The drawback with using this method is that it is only specific to that particular element.
+      The second is by sectioning off a part of the HTML file with the <style></style> tags, placing the style preferences within it and then assigning the corresponding classes as attributes to the elements.
+        Using this method, we can apply CSS styling to numerous elements by simply changing the properties of the styling within the <style> brackets.
+        Drawback is that as you continue to add more styles, the HTML document becomes more crowded and harder to read.
+      The third way is similar to the second method, but instead of keeping the styling information within <style> brackets, we create a separate file where we can hold all the CSS styling and then link that file to the HTML file.
+
     What is the “default stylesheet” or “user agent stylesheet”?
+
+
     Why use a CSS reset file?
