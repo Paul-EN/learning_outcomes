@@ -169,10 +169,10 @@ Videos
 -In addition to images, HTML can also support videos using the <video> tag.
 -Also requires the src attribute
 -Unlike the <img> tag, however, the <video> tag also requires the closing tag </video>
--The src must link to a video file. It cannot be linked to a video on another site.
 -After the src attribute, the width and and height attributes must be set.
 -Finally the controls attribute instructs the browser to include basic video controls: pause, play, and skip.
 -Between the opening and closing tags, we can write text to display in the even that the video is not supported by the browser.
+-The src must link to a video file. It cannot be linked to a video on another site.
 -Example of video tag in use:
     <video src="myVideo.mp4" width="320" height="240" controls>
       Video not supported
@@ -364,3 +364,52 @@ Table Head
       <tr>
        <th>Morning</th>
        etc.
+
+Table Footer
+-The bottom part of the table can also be sectioned off using the <tfoot> element.
+-Example:
+    ...
+    <td>$5M</td>
+    </tr>
+    </tbody>
+      <tfoot>
+        <tr>
+          <th>Total</th>
+          <td>$22M</td>
+          <td>$12.5M</td>
+        </tr>
+      </tfoot>
+    </table>
+
+Styling with CSS
+-Tables, by default, are very bland. They have no borders, the font color is black, and the typeface is the same type used for other HTML elements.
+-You can use CSS to style tables just like you have done in the past. Specifically, you can change the style the various aspects mentioned above.
+-Example:
+    table, th, td {
+      border: 1px solid black;
+      font-family: Arial, sans-seriff;
+      text-align: center;
+    }
+    The code in the example above demonstrates just some of the various table aspects you can style using the CSS properties you learned about earlier.
+
+========================================================================================================
+
+    HTML Tables
+
+    Great job! In this lesson, you learned how to create a table, add data to it, and section the table into smaller parts that make it easier to read.
+
+    Let's review what you've learned so far:
+
+        1. The <table> element creates a table.
+        2. The <tr> element adds rows to a table.
+        3. To add data to a row, you can use the <td> element.
+        4. Table headings clarify the meaning of data. Headings are added with the <th> element.
+        5. Table data can span columns using the colspan attribute.
+        6. Table data can span rows using the rowspan attribute.
+        7. Tables can be split into three main sections: a head, a body, and a footer.
+        8. A table's head is created with the <thead> element.
+        9. A table's body is created with the <tbody> element.
+        10. A table's footer is created with the <tfoot> element.
+        11. All the CSS properties you learned about in this course can be applied to tables and their data.
+
+========================================================================================================
