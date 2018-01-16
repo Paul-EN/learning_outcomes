@@ -496,3 +496,195 @@ In this lesson, we covered the four properties of the box model: height and widt
     9. The visibility property can hide or show elements.
 
 ========================================================================================================
+
+Why Change the Box Model?
+-The box model has an awkward limitation regarding box dimensions. This limitation is best illustrated with an example:
+    <h1>Hello World</h1>
+    h1 {
+      border: 1px solid black;
+      height: 200px;
+      width: 300px;
+      padding: 10px;
+    }
+    In the example above, a heading element's box has solid, black, 1 pixel thick borders. The height of the box is 200 pixels, while the width of the box is 300 pixels. A padding of 10 pixels has also been set on all four sides of the box's content.
+-Unfortunately, under the current box model, the border thickness and the padding will affect the dimensions of the box.
+-The 10 pixels of padding increases the height of the box to 220 pixels and the width to 320 pixels. Next, the 1-pixel thick border increases the height to 222 pixels and the width to 322 pixels.
+-Under this box model, the border thickness and padding are added to the overall dimensions of the box. This makes it difficult to accurately size a box. Over time, this can also make all of the web page's content difficult to position and manage.
+
+Box Model: Content-Box
+-Many properties in CSS have a default value and don't have to be explicitly set in the stylesheet.
+-For example, the default font-weight of text is normal, but this property-value pair is not typically specified in a stylesheet.
+-The same can be said about the box model that browsers assume. In CSS, the box-sizing property controls the type of box model the browser should use when interpreting a web page.
+-The default value of this property is content-box. This is the same box model that is affected by border thickness and padding.
+              _____________________________________________________________
+              |                                                           |
+              |                ___________________________                |
+              |                |                         |                |
+  left        |     left       |      Content Width      |    right       |     right
+  border ->   |    padding     |          158px          |   padding      |  <- border
+   1px        |     20px       |                         |    20px        |      1px
+              |                |_________________________|                |
+              |                                                           |
+              |                                                           |
+              |                                                           |
+              |___________________________________________________________|
+              {-------------------actual rendered width-------------------}
+                                          200px
+           width + padding + border = actual rendered width of an element's box
+
+Box Model: Border-Box
+-Fortunately, we can reset the entire box model and specify a new one: border-box.
+-Example:
+    * {
+      box-sizing: border-box;
+    }
+    The code in the example above resets the box model to border-box for all HTML elements. This new box model avoids the dimensional issues that exist in the former box model you learned about.
+-In this box model, the height and width of the box will remain fixed. The border thickness and padding will be included inside of the box, which means the overall dimensions of the box do not change.
+-Example:
+    <h1>Hello World</h1>
+    and in CSS
+    * {
+      box-sizing: border-box;
+    }
+    h1 {
+      border: 1px solid black;
+      height: 200px;
+      width: 300px;
+      padding: 10px;
+    }
+    In the example above, the height of the box would remain at 200 pixels and the width would remain at 300 pixels. The border thickness and padding would remain entirely inside of the box.
+-Example:
+            _____________________________________________________________
+            |                                                           |
+            |                ___________________________                |
+            |                |                         |                |
+left        |     left       |      Content Width      |    right       |     right
+border ->   |    padding     |          auto           |   padding      |  <- border
+1px         |     20px       |                         |    20px        |     1px
+            |                |_________________________|                |
+            |                                                           |
+            |___________________________________________________________|
+            {---------width property (and actual rendered width)--------}
+                                         200px
+
+The New Box Model
+    * {
+      box-sizing: border-box;
+    }
+
+========================================================================================================
+
+    Review: Changing the Box Model
+
+    In this lesson, you learned about an important limitation of the default box model: box dimensions are affected by border thickness and padding.
+
+    Let's review what you learned:
+
+        1. In the default box model, box dimensions are affected by border thickness and padding.
+        2. The box-sizing property controls the box model used by the browser.
+        3. The default value of the box-sizing property is content-box.
+        4. The value for the new box model is border-box.
+        5. The border-box model is not affected by border thickness or padding.
+
+========================================================================================================
+
+Flow of HTML
+-A browser will render the elements of an HTML document that has no CSS from left to right, top to bottom, in the same order as they exist in the document. This is called the flow of elements in HTML.
+-Properties that it provides to style HTML elements, CSS includes properties that change how a browser positions elements. These properties specify where an element is located on a page, if the element can share lines with other elements, and other related attributes.
+-Five properties for adjusting the position of HTML elements in the browser:
+    1. position
+    2. display
+    3. z-index
+    4. float
+    5. clear
+    Each of these properties will allow us to position and view elements on a web page. THey can be used in conjunction with any other styling properties you may know.
+
+Position
+-Block-level elements take up their own line of space and therefore don't overlap each other.
+-The default position for block level elements is on the left side.
+-The default position of an element can be changed by setting its position property. The position property can take one of four values:
+    1. static - the default value (it does not need to be specified)
+    2. relative
+    3. absolute
+    4. fixed
+-It's important to understand that if you favor the default position of an HTML element, you don't need to set its position property.
+-For the lesson exercise: Setting position to static does nothing. Thats because static simply refers to the default behavior.
+
+Position: Relative
+-One way to modify the default position of an element is by setting its position property to relative.
+-This value allows you to position an element relative to its default static position on the web page.
+-Example:
+    .box-bottom {
+      background-color: DeepSkyBlue;
+      position: relative;
+    }
+-Although the code in the example above instructs the browser to expect a relative positioning of the div, it does not specify where the div should be positioned on the page.
+-Example:
+    .box-bottom {
+      background-color: DeepSkyBlue;
+      position: relative;
+      top: 20px;
+      left: 50px;
+    }
+-In the example above, the div has been positioned using two of the four offeset properties. The valid offset properties are:
+    1. top - moves the element down
+    2. bottom - moves the element up
+    3. left - moves the element right
+    4. right - moves the element left
+-In the example above, the div will be moved down 20 pixels and to the right 50 pixels from its default static position.
+-Think of it as setting margin in order to position the element.
+
+Position: Absolute
+-Another way of modifying the position of an element is by setting its position to absolute.
+-When an element's position is set to absolute all other elements on the page will ignore the element and act like it is not present on the page.
+-Example:
+    .box-bottom {
+      background-color: DeepSkyBlue:
+      position: absolute;
+      top: 20px;
+      left: 50px;
+    }
+-In the example above, the .box-bottom div will be moved down and right from the top left corner of the view. If offset properties weren't specified, the top box would be entirely covered by the bottom box.
+
+Position: Fixed
+-When an element's position is set to absolute, as in the last example, the element will scroll out of view when a user scrolls.
+-We can fix an element to a specific position on the page (regardless of user scrolling) by setting its position to fixed.
+-Example:
+    .box-bottom {
+      background-color: DeepSkyBlue;
+      position: fixed;
+      top: 20px;
+      left: 50px;
+    }
+-The div will remain fixed to its position no matter where the user scrolls on the page.
+-This technique is often used for navigation bars on a web page.
+
+Z-Index
+-When boxes on a web page have a combination of different positions, the boxes (and therefore, their content) can ovverlap with each other, making the content difficult to read or consume.
+-Example:
+    .box-top {
+      background-color: Aquamarine;
+    }
+    .box-bottom {
+      background-color: DeepSkyBlue;
+      position: absolute;
+      top: 20px;
+      left: 50px;
+    }
+-In the example above, the .box-bottom div ignores the .box-top div and overlaps it as a user scrolls.
+-The z-index property controls how far "back" or how far "forward" an element should appear on the web page.
+-The z-index property accepts integer values. Depending on their values, the integers instruct the browser on the order in which elements should be displayed on the web page.
+-Example:
+    .box-top {
+      background-color: Aquamarine;
+      position: relative;
+      z-index: 2;
+    }
+    .box-bottom {
+      background-color: DeepSkyBlue;
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      z-index: 1;
+    }
+-The z-index property does not work on static elements
