@@ -42,7 +42,10 @@
 
 
     What is the difference between “pixels” and “ems”?
-      
+      A pixel is a static unit of measurement.
+          -If an element is set to, for example, 200px in length, the browser will display the element as 200px long regardless of the display size of the screen.
+      An em is a relative unit of measurement and is based on the current dimensions of the element.
+          -If the font-size is set to 20px, 2em's would mean that: 20px * 2 = 40px. 
 
     How do CSS styles for a particular element get inherited? i.e. how does an element get its “default” styles?
 
