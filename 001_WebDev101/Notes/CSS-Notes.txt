@@ -688,3 +688,216 @@ Z-Index
       z-index: 1;
     }
 -The z-index property does not work on static elements
+
+Inline Display
+-Every HTML element has a default display value that dictates if it can share horizontal space with other elements. Some elements fill the entire browser from left to right regardless of the size of their content. Other elements only take up as much horizontal space as their content requires and can be directly next to other elements.
+-There are three values for display property:
+    1. inline
+    2. block
+    3. inline-block
+-The default display for some tags, such as <em>, <strong>, and <a>, is called inline. Inline elements have a box that wraps tightly around their content, only taking up the amount of space necessary to display their content and not requiring a new line after each element.
+-The height and width of these elements cannot be specified in the CSS document. For example, the text of an anchor tag will, by default, be displayed on the same line as the text inside of an emphasized element. Each of these will only be as wide as necessary to contain their content.
+-Example:
+    To learn more about <em>inline</em> elements, clock <a href="#">here</a>.
+-In the example above, the <em> element is inline, because it displays its content on the same line as the content surrounding it, including the anchor tag.
+-The CSS display property provides the ability to make any element an inline element. This includes elements that are not inline by default such as paragraphs, divs, and headings.
+-Example:
+    h1 {
+      display: inline;
+    }
+-The CSS in the example above will change the display of all <h1> elements to inline. The browser will render <h1> elements on the same line as other inline elements immediately before or after them (if there are any).
+
+Block Display
+-Some elements are not displayed in the same line as the content around them. These are called block-level elements. These elements fill the entire width of the page and, unless soecified, are the height necessary to accommodate the content inside of them.
+-Elements that are block-level by default include all levels of heading elements (<h1> through <h6>), <p>, <div> and <footer>.
+-For a complete list of block level elements, visit
+https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements
+-Example:
+    strong {
+      display: block;
+    }
+-In the example above, all <strong> elements will be displayed on their own line, with no content directly on either side of them even though their contents may not fill the width of most computer screens.
+
+Inline-Block Display
+-The third value for the display property is inline-block. Inline-block display combines features of both inline and block elements. Inline-block elements can appear next to each other and we can specify their dimensions using width and height properties. Images are the best example of default inline-block elements.
+-For example, div's in the CSS below will be displayed on the same line and with the specified dimensions:
+    In HTML
+    <div class="rectangle">
+      <p>I’m a rectangle!</p>
+    </div>
+    <div class="rectangle">
+      <p>So am I!</p>
+    </div>
+    <div class="rectangle">
+      <p>Me three!</p>
+    </div>
+    and in CSS
+    .rectangle {
+      display: inline-block;
+      width: 200px;
+      height: 300px;
+    }
+-In the example above, there are three rectangular divs that each contain a paragraph of text. The .rectangle divs will appear inline (provided there is enough space from left to right) with a width of 200 pixels and height of 300 pixels, even though the text inside of them may not require 200 pixels by 300 pixels of space.
+
+Float
+-If you're simply interested in moving an element as far left or as far right as possible on the page, you can use the float property.
+-The float property can be set to one of two values:
+    1. left - this value will move, or float, elements as far left as possible
+    2. right - this value will move elements as far right as possible
+-Example:
+    .boxes {
+      width: 120px;
+      height: 70px;
+    }
+    .box-bottom {
+      background-color: DeepSkyBlue;
+      float: right;
+    }
+-In the example above, we float the .box-bottom element to the right. This works for static and relative positioning elements. See the result of the code below:
+-Floated elements must have a width specified, as in the example above. Otherwise, the element will assume the full width of its containing element, and changing the float value will not yield any visible results.
+
+Clear
+-The float property can also be used to float multiple elements at once. However, when multiple floated elements have different heights, it can affect their layout on the page. Specifically, elements can "bump" into each other and not allow other elements to properly move to the left or right.
+-The clear property specifies how elements should behave when they bump into each other on the page. It can take on one of the following values:
+    1. left - the left side of the element will not touch any other element within the same containnig element.
+    2. right - the right side of the element will not touch any other element within the same containing element.
+    3. both - neither side of the element will touch any other element within the same containing element.
+    4. none - the element can touch either side.
+-Example:
+    div {
+      width: 200px;
+      float: left;
+    }
+    div.special {
+      clear: left;
+    }
+-In the example above, all divs on the page are floated to the left side. The div with class special did not move all the way to the left because a taller div blocked its positioning. By setting its clear property to left, the special div will be moved all the way to the left side of the page.
+
+========================================================================================================
+
+Review: Layout
+
+Great job! In this lesson, you learned how to control the positioning of elements on a web page.
+
+Let's review what you've learned so far:
+
+    1. The position property allows you to specify the position of an element in three different ways.
+    2. When set to relative, an element's position is relative to its default position on the page.
+    3. When set to absolute, an element's position can be pinned to any part of the web page, but the element will still move out of view when the page is scrolled.
+    4. When set to fixed, an element's position can be pinned to any part of the web page. The element will remain in view no matter what.
+    5. The z-index of an element specifies how far back or how far forward an element appears on the page.
+    6. The float property can move elements as far left or as far right as possible on a web page.
+    7. You can clear an element's left or right side (or both) using the clear property.
+
+========================================================================================================
+
+Introduction to Color
+-CSS supports a wide variety of colors. These include named colors, like blue, black, and LimeGreen, along with colors described by a numeric value. Using a numeric system allows us to take advantage of the whole spectrum of colors that browsers support.
+-Colors in CSS can be described in three different ways:
+    1. Named colors - English words that describe colors, also called keyword colors.
+    2. RGB - numeric values that describe a mix of red, green, and blue.
+    3. HSL - numeric values that describe a mix of hue, saturation, and lightness.
+
+Foreground vs Background
+-It's important to make two distinctions about color. Color can affect the following design aspects:
+    1. The foreground color
+    2. The background color
+-Foreground color is the color that an element appears in. For example, when a heading is styled to appear green, the foreground color of the heading has been styled.
+-Conversely, when a heading is styled so that its background appears yellow, the background color of the heading has been styled.
+-In CSS, these two design aspects can be styled with the following two properties:
+    1. color - this property styles an element's foreground color
+    2. background-color - this property styles an element's background color
+-Example:
+    h1 {
+      color: Red;
+      background-color: Blue;
+    }
+-In the example above, the text of the heading will appear in red, and the background of the heading will appear blue.
+
+Hexadecimal
+-One syntax that we can use to specify colors is called hexadecimal. Colors specified using this system are called hex colors. A hex color begins with a hash character (#) which is followed by three or six characters. The characters represent values for red, blue, and green.
+-Example:
+    DarkSeaGreen: #8FBC8F
+    Sienna:       #A0522D
+    SaddleBrown:  #8B4513
+    Brown:        #A52A2A
+    Black:        #000000 or #000
+    White:        #FFFFFF or #FFF
+    Aqua:         #00FFFF or #0FF
+-In the example above, you may notice that there are both letters and numbers in the values. This is because the hexadecimal number system has 16 digits (0-15) instead of 10 (0-9) like you are used to. To represent 10-15, we use A-F.
+-For a list of many different colors and their hex values, visit:
+https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
+-Notice that Black, White, and Aqua are all represented with both three characters and six characters. -This can be done with hex colors whose number pairs are the same characters. In the example above, Aqua can be represented as #0FF because both of the first two characters are 0 and the second and third pairs of characters are both F's. Keep in mind that all three character hex colors can be represented with six characters (by repeating each character twice) but the same is not true in reverse.
+-You can include hex colors just as you would include named colors:
+-Example:
+    background-color: #9932cc;
+
+RGB Colors
+-There is another syntax for representing RGB values that uses decimal numbers.
+-Example:
+    color: rgb(23, 45, 23);
+-Here, each of the three values represents a color component, and each can have a decimal number value from 0 to 255.
+-The first number represents the amount of red, the second is green, and the third is blue.
+-These colors are exactly the same as hex, but with a different syntax and a different number system.
+-In general, hex and decimal color representations are equivalent. Which you choose is a matter of personal taste.
+-It is recommended to choose one and be consistent throughtout your CSS, because it's easier to compare hex to hex and decimal to decimal.
+
+Hex and RGB
+-The RGB color system can represent many more colors than the small set of CSS named colors.
+-In both hex and decimal, we have three values, one for each color. Each can  be one of 256 values. Specifically, 256 * 256 * 256 = 16,777,216. That is the amount of colors we can now represent compared to the 147 named CSS colors.
+
+Hue, Saturation, and Lightness
+-The RGB color scheme is convenient because it's very close to how computers represent colors internally. There's another equally powerful system in CSS called the hue-saturation-lightness color scheme, abbreviated as HSL.
+-The syntax for HSL is similar to the decimal form of RGB, though it differs in important ways. The first number represents the degree of the hue, nd can be between 0 and 360. The second and third numbers are percentages representing saturation and lightness respectively.
+-Example:
+    color: hsl(120, 60%, 70%);
+-Hue is the first number. It refers to an angle on a color wheel. Red is 0 degrees, Green is 120 degrees, Blue is 240 degrees, and then back to Red at 360.
+-You can see an example of this color wheel here:
+http://dba.med.sc.edu/price/irf/Adobe_tg/models/images/hsl_top.JPG
+-Saturation refers to the intensity or purity of the color. If you imagine a line segment drawn from the center of the color wheel to the perimeter, the saturation is a point on that line segment. If you spin that line segment to different angles, you'll see how that saturation looks for different hues. The saturation increases towards 100% as the point gets closer to the edge (the color becomes more rich). The saturation decreases towards 0% as the point gets closer to the center (the color becomes more gray).
+-Lightness refers to how light or dark the color is. Halfway, or 50%, is normal lightness. Imagine a sliding dimmer on a light switch that starts halfway. Sliding the dimmer up towards 100% makes the color lighter, closer to white. Sliding the dimmer down towards 0% makes the color darker, closer to black.
+-HSL is convenient for adjusting colors. In RGB, making the color a little darker may affect all three color components. In HSL, that's as easy as changing the lightness value. HSL is also useful for making a set of colors that work well together by selecting various colors that have the same lightness and saturation but different hues.
+
+Opacity and Alpha
+-Opcacity - the amount of transparency
+-To use opacity in the HSL color scheme, use hsla instead of hsl, and four values instead of three.
+-Example:
+    color: hsla(34, 100%, 50%, 0.1);
+-The first three values work the same as hsl. The fourth value (which we have not seen before) is the alpha. This value is sometimes called the opacity.
+-Alpha is a decimal number from zero to one.
+-If alpha is zero, the color will be completely transparent. If alpha is one, the color will be opaque. The value for half transparent would be 0.5.
+-You can think of the alpha value as, "the amount of the background to mix with the foreground". WHen a color's alpha is below one, any color behind it will be blended in. The blending happens for each pixel; no blurring occurs.
+-The RGB color scheme has a similar syntax for opacity, rgba.
+-The first three values work the same as rgb, and the last value is the alpha.
+-Example:
+    color: rgba(234, 45, 98, 0.33);
+-Alpha can only be used with HSL and RGB colors; we cannot add the alpha calue to color: green color: #FFFFF.
+-There is, however, a named color keyword for zero opacity, transparent. It's equivalent to rgba(0, 0, 0, 0). It's used like any other color keyword.
+-Example:
+    color: transparent;
+
+========================================================================================================
+
+    Color Review
+
+    We've completed our extensive tour of the colors in CSS! Let's review the key information we've learned.
+
+    There are four ways to represent color in CSS:
+
+    Named colors — there are 147 named colors, which you can review here.
+
+    Hexadecimal or hex colors
+        Hexadecimal is a number system with has sixteen digits, 0 to 9 followed by "A" to "F".
+        Hex values always begin with # and specify values of red, blue and green using hexademical numbers such as #23F41A.
+
+    RGB
+        RGB colors use the rgb() syntax with one value for red, one value for blue and one value for green.
+        RGB values range from 0 to 255 and look like this: rgb(7, 210, 50).
+
+    HSL
+        HSL stands for hue (the color itself), saturation (the intensity of the color), and lightness (how light or dark a color is).
+        Hue ranges from 0 to 360 and saturation and lightness are both represented as percentages like this: hsl(200, 20%, 50%).
+
+    You can add opacity to color in RGB and HSL by adding a fourth value, a, which is represented as a percentage.
+
+========================================================================================================

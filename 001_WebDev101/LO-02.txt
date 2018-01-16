@@ -42,13 +42,13 @@
 
 
     What is the difference between “pixels” and “ems”?
-
+      
 
     How do CSS styles for a particular element get inherited? i.e. how does an element get its “default” styles?
 
 
     What are two CSS attributes you can change to push an element around on the page?
-
+      There are a couple, but two of them would be the position and float attributes.
 
     What are the three different ways to include CSS in your project or use CSS to style a particular element?
       The first way to include CSS is directly, by adding it to the tag. The drawback with using this method is that it is only specific to that particular element.
