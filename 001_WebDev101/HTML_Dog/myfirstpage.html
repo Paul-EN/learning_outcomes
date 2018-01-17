@@ -1,0 +1,76 @@
+<!DOCTYPE html> <!-- Document Type Declaration - Tells the browser what format to read this document in (HTML5, in this case) -->
+<html> <!-- Specifies that everything between the <html> tags is to be read as HTML code -->
+  <head> <!-- Mainly used to hold metadata about the page and always comes before the <body> tag. Content within <head> tags typically do not show directly on the web page -->
+    <title>My first web page</title> <!-- Gives the page a title. It does not appear in the actual page, but can be seen in the tab or when the page is saved as a bookmark -->
+  </head>
+  <body> <!-- Used to hold the main content of the web page and what will be displayed on the browser -->
+    <p>Using < p>< /p> tags:</p> <!-- Used to section off pieces of text as individual elements (paragraphs, in this case) -->
+    <p>This is my first web page</p>
+    <p>How exciting</p>
+
+    Using < br> tags:<br> <!-- Use to create a line break. Everthing after the <br> tag is moved down to the next line of text -->
+    This is my first web page<br> <!-- Shouldn't be used if two blocks of text are intended to be separate from one another. Use <p> tags instead for that -->
+    How exciting
+
+    <p>Adding emphasis with < em> and < strong><br>
+    <em>Hello</em> <strong>World</strong></p> <!-- <em> tags are used to add emphasis to text (italics) and <strong> tags are used to make text bold -->
+
+    <p>Headers (< h1> to < h6>):</p>
+    <h1>My first web page</h1> <!-- Headers (<h1> - <h6>) tags create prominence for text, with <h1> being the biggest -->
+    <h2>What this is</h2>
+    <p>A simple page put together using simple HTML</p>
+
+    <h2>Why this is</h2>
+    <ul> <!-- To create bulleted lists, use <ul> (unordered list) with its corresponding elemetns using <li> (list) tags nested inside -->
+      <li>To learn HTML</li>
+      <li>To show off</li>
+        <ol> <!-- To create numbered lists, use <ol> (ordered list) with its corresponding <li> elements -->
+          <li>To my boss</li>
+          <li>To my friends</li>
+          <li>To my dog</li>
+          <li>To the little talking duck in my brain, Darkwing</li>
+        </ol>
+      <li>Because I've fallen in love with my computer and want to give her some HTML loving.</li>
+    </ul> <!-- <ul> and <ol> can be nested within other elements -->
+
+    <h2>Where to find the tutorial</h2>
+    <p><a href="http://www.htmldog.com/">HTML Dog</a></p> <!-- <a> tag along with href="" attribute can be used to link to other web pages. Place text within <a></a> tags to show the link as a hyper link. Can also be used to link to other content on the same web page -->
+
+    <img src="http://www.htmldog.com/badge1.gif" width="120" height="90" alt="HTML Dog"> <!-- The <img> with its src="" attributes are used to dispaly images. width and height attributes can be added to specify size. alt attribute is used to show a description of the picture in the even the image cannot be displayed or if user has accessibilikty needs -->
+
+    <h2>Tables:</h2>
+    <table> <!-- Defines the table element -->
+        <tr> <!-- Defines the row -->
+            <td>Row 1, cell 1</td> <!-- Defines the data cell -->
+            <td>Row 1, cell 2</td>
+            <td>Row 1, cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, cell 1</td>
+            <td>Row 2, cell 2</td>
+            <td>Row 2, cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 3, cell 1</td>
+            <td>Row 3, cell 2</td>
+            <td>Row 3, cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 4, cell 1</td>
+            <td>Row 4, cell 2</td>
+            <td>Row 4, cell 3</td>
+        </tr>
+    </table>
+
+    <!-- form defines the form and within this tag, if you are using a form for a user to submit information (which we are assuming at this level), an action attribute is needed to tell the form wshere its contents will be sent to. -->
+    <!-- The method attribute tells the form how the data in it is going to be sent and it can have the value get, which is default, and latches the form information onto a web address, or post, which (essentially) invisibly sends the form's information. -->
+    <!-- get is used for shorter chunks of non-sensitive information - you might see the information you have submitted in a web site's search to appear in the web address of its search results page, for example. -->
+    <!-- post is used for lengthier, more secure submissions, such as in contact forms. -->
+    <!-- Example:
+    <form action="processingscript.php" method="post">
+
+    </form>
+    -->
+    
+  </body>
+</html>
