@@ -1,8 +1,10 @@
 <!DOCTYPE html> <!-- Document Type Declaration - Tells the browser what format to read this document in (HTML5, in this case) -->
 <html> <!-- Specifies that everything between the <html> tags is to be read as HTML code -->
+
   <head> <!-- Mainly used to hold metadata about the page and always comes before the <body> tag. Content within <head> tags typically do not show directly on the web page -->
     <title>My first web page</title> <!-- Gives the page a title. It does not appear in the actual page, but can be seen in the tab or when the page is saved as a bookmark -->
   </head>
+
   <body> <!-- Used to hold the main content of the web page and what will be displayed on the browser -->
     <p>Using < p>< /p> tags:</p> <!-- Used to section off pieces of text as individual elements (paragraphs, in this case) -->
     <p>This is my first web page</p>
@@ -18,7 +20,7 @@
     <p>Headers (< h1> to < h6>):</p>
     <h1>My first web page</h1> <!-- Headers (<h1> - <h6>) tags create prominence for text, with <h1> being the biggest -->
     <h2>What this is</h2>
-    <p>A simple page put together using simple HTML</p>
+    <p>A simple page put together using HTML. <br><em>A simple page put together using HTML.</em> <br><strong>A simple page put together using HTML.</strong></p>
 
     <h2>Why this is</h2>
     <ul> <!-- To create bulleted lists, use <ul> (unordered list) with its corresponding elemetns using <li> (list) tags nested inside -->
@@ -37,6 +39,10 @@
     <p><a href="http://www.htmldog.com/">HTML Dog</a></p> <!-- <a> tag along with href="" attribute can be used to link to other web pages. Place text within <a></a> tags to show the link as a hyper link. Can also be used to link to other content on the same web page -->
 
     <img src="http://www.htmldog.com/badge1.gif" width="120" height="90" alt="HTML Dog"> <!-- The <img> with its src="" attributes are used to dispaly images. width and height attributes can be added to specify size. alt attribute is used to show a description of the picture in the even the image cannot be displayed or if user has accessibilikty needs -->
+
+    <h3>Combination of both above</h3>
+    <h4>Where to find the tutorial</h4>
+    <p><a href="http://www.htmldog.com"><img src="http://www.htmldog.com/badge1.gif" width="120" height="90" alt="HTML Dog"></a></p>
 
     <h2>Tables:</h2>
     <table> <!-- Defines the table element -->
@@ -62,15 +68,65 @@
         </tr>
     </table>
 
-    <!-- form defines the form and within this tag, if you are using a form for a user to submit information (which we are assuming at this level), an action attribute is needed to tell the form wshere its contents will be sent to. -->
-    <!-- The method attribute tells the form how the data in it is going to be sent and it can have the value get, which is default, and latches the form information onto a web address, or post, which (essentially) invisibly sends the form's information. -->
-    <!-- get is used for shorter chunks of non-sensitive information - you might see the information you have submitted in a web site's search to appear in the web address of its search results page, for example. -->
-    <!-- post is used for lengthier, more secure submissions, such as in contact forms. -->
-    <!-- Example:
+    <!--
+    form defines the form and within this tag, if you are using a form for a user to submit information (which we are assuming at this level), an action attribute is needed to tell the form wshere its contents will be sent to.
+    The method attribute tells the form how the data in it is going to be sent and it can have the value get, which is default, and latches the form information onto a web address, or post, which (essentiall) invisibly sends the form's information.
+    get is used for shorter chunks of non-sensitive information - you might see the information you have submitted in a web site's search to appear in the web address of its search results page, for example.
+    post is used for lengthier, more secure submissions, such as in contact forms.
+    -Example:
     <form action="processingscript.php" method="post">
-
     </form>
     -->
-    
+    <!--
+    The input tag is the daddy of the form world. It can take a multitude of guises, the most common of which are outlined below (see the input reference page(http://www.htmldog.com/references/html/tags/input/)).
+    <input type="text"> or simply <input> is a standard textbox. This can also have a value attribute, which sets the initial text in the textbox.
+    <input type="password"> is similar to the textbox, but the characters are typed in yb the user will be hidden.
+    <input type="checkbox"> is a checkbox, which can be toggled on and off by the user. This can also have a checked attribute (<input type="checkbox" checked> - the attribute doesn't require a value), and makes the initial state of the check box to be switched to on, as it were.
+    <input type="radio"> is similar to a checkbox, but the user can only select one radio button in a group. THis can also have a checked attribute.
+    <input type="submit"> is a button that when selected will submit the form. You can control the text that appears on the submit button with the value attribute, for example <input type="submit" value="Ooo. Look. Text on a button. Wow">.
+    *Note that, like img and br tags, the input tag, which doesn't surround any content, doesn't require a closing tag.
+    -->
+
+    <p>textarea</p> <!-- textarea is, basically, a large, multi-line textbox. The anticipated number of rows and columns can be defined with rows and cols attributes, although you can manipulate the size to your heart's content using CSS. -->
+    <textarea rows="5" cols="20">A big load of text</textarea> <!-- Any text you choose to place between the opening and closing tags (in this case "a big load of text") will form the initial value of the text area. -->
+
+    <p>select</p> <!-- The select tag works with the option tag to make drop-down select boxes. -->
+    <select>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option value="third option">Option 3</option>
+    </select>
+    <!-- When this form is submitted, the value of the selected option will be sent. This value will be the text between the selected opening and closing option tag unless an explicit value is specified with the value attribute, in which case this will be sent instead. -->
+    <!-- So, in the above example, if the first item is selected, "Option 1" will be sent, if the third item is selected, "third option" will be sent. -->
+    <!-- Similar to the checked attribute of checkeboxes and radio buttons, an option tag can also have selected attribute, to start off with one of the items already being selected, eg <option selected>Rodent</option> would pre-select "Rodent" form the items. -->
+
+    <!--  All of the tags mentioned above will look very nice presented on the page but if you hook up your form to a form-handling script, they will all be ignored. This is because the form fields need names. So to all of the fields, the attribute name needs to be added, for example <input type="text" name="talkingsponge">. -->
+    <!-- A contact form for Noah's Ark, for example, might look something like the one below. (Note: this form will not work unless there is a "contactus.php" file, which is stated in the action attribute of the form tag, to handle the submitted data). -->
+    <h3>Some random form</h3>
+    <p><strong>Name:</strong> It looks the part, but won't do a damned thing.</p>
+
+    <form action="contactus.php" method="post">
+
+        <p>Name:</p>
+        <p><input type="text" name="name" value="Your name"></p>
+
+        <p>Species:</p>
+        <p><input name="species"></p>
+        <!-- remember: 'type="text"' isn't actually necessary -->
+
+        <p>Comments:</p>
+        <p><textarea name="comments" rows="5" cols="20">Your comments</textarea></p>
+
+        <p>Are you:</p>
+        <p><input type="radio" name="areyou" value="male"> Male</p>
+        <p><input type="radio" name="areyou" value="female"> Female</p>
+        <p><input type="radio" name="areyou" value="hermaphrodite"> An hermaphrodite</p>
+        <p><input type="radio" name="areyou" value="asexual"> Asexual</p>
+
+        <p><input type="submit"></p>
+
+      </form>
+
   </body>
+
 </html>
