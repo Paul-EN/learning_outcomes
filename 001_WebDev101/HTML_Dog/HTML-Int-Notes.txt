@@ -69,6 +69,229 @@ As an example, pre and code are used extensively throughout this site. The code 
 
 --------------------------------------------------------------------------------
 
+Meta Tags
+Meta tags don't do anything to the content that is presented in the browser window, but they are used by the likes of search engines to catalog information about the web page.
 
+There is one meta tag which can be used as many times as you desire inside a head element and they can contain the attributes charset, name, http-equiv, and content.
+
+When the name or http-equiv attribute is used, the content attribute is then used in conjunction with them to apply meta data itself.
+
+Names
+The name attribute can be anything you like. The most commonly used names are author, description, and keywords. author is used to explicitly state one of the HTML page's authors and description is often used by search engines (such as Google) to display a description of a web page in its search results.
+
+  The reason why meta tags used to be so important was because they were relied on by search engines to build a profile of a web page. The keywords meta data was used (and abused) extensively, for example. Nowadays, however, most search engines use the actual content of the page itself.
+
+HTTP Equivalents
+The http-equiv attribute can be used instead of the name attribute and will make an HTTP header, which is information sent to the server where the web page is held. The attribute should rarely be used (although see charset note, below) but the value can be:
+  content-type - an encoding declaration, defining what character set is being used
+  default-style - the preferred stylesheet from a selection of link or style elements
+  refresh - which defines how often (in seconds) a page automatically refreshes or if it should automatically redirect to another page. Not great for accessibility.
+
+    The charset attribute can be used as a shorthand method to define an HTML document's character set, which is always a good thing to do.
+    Example:
+        <meta charset="utf-8"> is the same as <meta http-equiv="content-type" content="text-html; charset=utf-8">.
+
+Example:
+    <head>
+      <title>Air conditioners? YEAH conditioners!</title>
+      <meta charset="utf-8">
+      <meta http-equiv="refresh" content="3"> <!-- Not recommended -->
+      <meta name="description" content"This is my really, really, REALLY exciting web page about air conditioners">
+      ...
 
 --------------------------------------------------------------------------------
+
+Tables: rowspan and colspan
+Example:
+
+  <table>
+    <tr>
+      <th>Column 1 heading</th>
+      <th>Column 2 heading</th>
+      <th>Column 3 heading</th>
+    </tr>
+    <tr>
+      <td>Row 2, cell 1</td>
+      <td colspan="2">Row 2, cell 2, also spanning Row 2, cell 3</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Row 3, cell 1, also spanning Row 4, cell 1</td>
+      <td>Row 3, cell 2</td>
+      <td>Row 3, cell 3</td>
+    </tr>
+    <tr>
+      <td>Row 4, cell 2</td>
+      <td>Row 4, cell 3</td>
+    </tr>
+  </table>
+
+Header cells
+The first difference is that the td tags of the first row have been replaced with th tags. Whereas a td is a standard data cell, th is a header cell. As with td elements, these must be enclosed inside tr elements.
+
+Spanning columns and rows
+colspan and rowspan attributes have also been used in some of the td tags. If you look at this code in  a browser, you will see that on the second row there are now two cells instead of three, the second cell spanning the second and third column.
+The colspan attribute, which means "column span" will span the cell over the number of cells that is specified. This means, in this example, that there is no need for a third td element -- two cells are merged into one.
+
+The rowspan attribute is similar to colspan, except, obviously, it will span across rows rather than columns.
+Again, the cells that it spans should be removed. In this example, because it spans over the fourth row, there are only two cells in that row.
+
+As with the simpler 3x4, 12-cell table, the numbers on these tables with merged cells should also add up.
+Although there are only 10 cells in this example, there are two spans.
+
+--------------------------------------------------------------------------------
+
+Description Lists
+Description lists are quite often forgotten. This is maybe because they are much more specific than ordered and unordered lists and therefore less useful, generally, but where there is a list of terms and descriptions (such as a glossary), a description list is your go-to-element.
+
+dl gets the ball rolling, similar to the ul and ol elements, establishing the list. Rather than containing li elements, though, description lists have dt elements, which are the terms, followed by dd elements, which are the descriptions associated to the dt elements.
+
+There doesn't have to be one dt followed by one dd, there can be any number of either. For example, if there are a number of words that have the same meaning, there might be a number of dt's followed by one dd. If you have one word that means various different things, there might be one dt followed by several dd's.
+
+Example:
+
+    <h1>Some random glossary thing</h1>
+    <dl>
+      <dt>HTML</dt>
+      <dd>Abbreviation for HyperText Markup Language - a language used to make web pages.</dd>
+
+      <dt>Dog</dt>
+      <dd>Any carnivorous animal belonging to the family Canidae.</dd>
+      <dd>The domesticated sub-species of the family Canidae, Canis lupus familiaris.</dd>
+
+      <dt>Moo juice</dt>
+      <dt>Cat beer</dt>
+      <dt>Milk</dt>
+      <dd>A white liquid produced by cows and used for human consumption.</dd>
+    </dl>
+
+--------------------------------------------------------------------------------
+
+Text: Addresses, Definitions, Bi-directional, and Editorial
+There are several other, more obscure tags that can be used. Obscure because you won't find them plastered around the web, not because they are unhelpful. If you find you have text that fits these elements' descriptions, you will have a nicer, richer, more meaningful HTML page if you use them.
+
+Addresses
+address should be used specifically for the contact details relating either to the entire web page (and so only used once) or to an article element (see http://www.htmldog.com/guides/html/intermediate/sectioning/). It isn't, as it might at first appear, for marking up any old address willy-nilly.
+
+Example:
+  <h3>Author contact details</h3>
+    <address>
+      <ul>
+        <li>0123-456-7890</li>
+        <li>author_dude@noplaceinteresting.com</li>
+        <li>http://www.noplaceinteresting.com/contactme/</li>
+      </ul>
+  </address>
+
+  Definition terms
+  dfn is a definition term and is used to highlight the first use of a term. Like abbr, the title attribute can be used to describe the term.
+
+  Example:
+    <p>Bob's <dfn title="Dog">canine</dfn> mother and <dfn title="Horse">equine</dfn> father sat him down and carefully explained that he was an <dfn title="A mutation that combines two or more sets of chromosomes from different species">allopolyploid</dfn> organism.</p>
+
+Bi-directional text
+bdo can be used to revers the direction of the text, and can be used to display languages that read right to left. The value of the required attribute dir can be ltr (left to right) or rtl (right to left).
+
+Example:
+  <bdo dir="rtl">god lmth</bdo>
+
+Edotorial
+ins and del are used to display editorial insertions and deletions respectively. Strictly speaking, they aren't limited to text and can be used over whole swatches of content but, typically, they are used in moderation just like "Track Changes" feature in word processors tend to be.
+
+They can have attributes datetime to indicate when the edit was made and cite, to point to a description as to why the edit has been made.
+
+Example:
+  <p>I have decided to <del datetime="2013-01-26">decrease</del><ins cite="http://www.icecreamforall.com/changeofpolicy/">increase</ins> the amount of free ice cream that the State will provide for its citizens.</p>
+
+    As with traditional word processor-based editing, the ins element is typically shown underlined and del element is usually displayed with a strikethrough.
+
+--------------------------------------------------------------------------------
+
+Sectioning
+While heading do a grand, prefectly valid, job in defining the start of a new section or sub-section in a document, there are a number of elements that can be exploited to establish a cleaner, clearer semantic structure.
+
+Whereas div elements can be used to contain sections, used primarily as scaffolding on which to hang CSS, they don't hold a great deal of meaning. Sectioning involves a handful of tags that can be used to define specific parts of a page, such as articles, headers, footers, and navigation.
+
+Articles and Sections
+An article element can be used to mark up a standalone section of content. This could be used just once, if you think of a blog post as an article, for example, or a number of times, if you imagine replicating a traditional newspaper page with numerous articles.
+
+A section element represents a more general section and could be used to split up an article, or to represent chapters for example.
+
+Example:
+  <article>
+    <section id="intro">
+      <p>[An introduction]</p>
+    </section>
+    <section id="main_content">
+      <p>[Content]</p>
+    </section>
+    <section> id="related">
+      <ul>
+        <li><a href="that.html">That related article</a></li>
+        <li><a href="that.html">That related article</a></li>
+      </ul>
+    </section>
+  </article>
+
+While div's could be used to make these separations (or even if you didn't need these separations for styling), this provides a much richer, more meaningful document.
+
+  The HTML5 specifications suggest that you can use h1 elements at the start of each section, which would become a sub-heading of anything preceding that section (so, in the example above, if you had an h1 immediately following the opening article tag, an h1 immediately after an opening section tag would be a sub-heading of that initial h1). This screws backwards compatibility, however, and any user agents (including screen readers) that don't understand this won't apply properly structured heading levels. We suggest sticking to the headings level you would use if you didn't use sections (so h1, followed by h2, etc, regardless of sectioning). This doesn't break anything or detract from the meaning or semantics.
+
+Headers and Footers
+header and footer provide further specialized, self-descriptive, sections:
+    <body>
+      <article>
+        <header>
+          <h1Alternatively&hellip;</h1>
+          <p>[An introduction]</p>
+        </header>
+        <section id="main_content">
+          <p>[Content]</p>
+        </section>
+        <footer>
+          <p>[End notes]</p>
+        </footer>
+      </article>
+      <footer>
+        <p>[Copyright bumf]</p>
+      </footer>
+    </body>
+
+The footer is the footer of the section in which it is contained. So, in the above example, the first footer is the footer of the article and the second footer is the footer of the page.
+
+Asides
+An aside can be used to represent content that is related to the content surrounding it. Think of pull-quotes or snippets of related information in an article:
+  Example:
+    <section id="main_content">
+      <h1>Tixall</h1>
+      <p>[All about Tixall]</p>
+      <aside>
+        <h2>Tixall Obelisk</h2>
+        <p>[A short note about Tixall Obelisk]</p>
+      </aside>
+      <p>[Maybe a bit more about Tixall]</p>
+    </section>
+
+    While we're at this structure-love, if you want to include figures, there happens to be two tags for doing just that:
+      <figure>
+        <img src="obelisk.jpg">
+        <figcaption>Tixall Obelisk</figcaption>
+      </figure>
+      Note the img element doesn't need an alt attribute IF the figcaption (that's "figure caption") does the job.
+
+Navigation
+Finally, there's nav, used to makr up a group of navigation links:
+Example:
+  <nav id="main_nav">
+    <ul>
+      <li><a href="/tutorials/">Tutorials</a></li>
+      <li><a href="/techniques/">Techniques</a></li>
+      <li><a href="/examples/">Examples</a></li>
+      <li><a href="/references/">References</a></li>
+    </ul>
+  </nav>
+
+    This could also be used for in-page navigation (<a href="#overthere">...etc) but it isn't necessary for every group of links - it is designed for major groupings. A copyright, author, and contact link could sit happily by themselves in a footer element, for exmaple.
+
+If you want to style these new HTML5 elements you will experience a problem in older browsers, most notably Internet Explorer versions 8 and earlier, that don't understand these tags.
+
+However, HTML5Shiv (https://code.google.com/p/html5shiv/) can come to your rescue; a small piece of JavaScript, slotted in to your head element, that teaches the remedial browsers and holds their hands so that you can use new HTML5 tags and style them up to your heart's content with CSS.
