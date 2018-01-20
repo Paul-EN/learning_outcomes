@@ -14,7 +14,7 @@
       Attributes can be used to assign names to tags, and to specify values to the tags.
 
     What are forms?
-
+      Forms are elements that allow you to create an input for the user. With <forms> you can create user logins, questionnaires, allow the user to submit messages, etc.
 
     What is a div?
       div, short for divide, is a special type of tag where most all different types of elements can be nested in. It is typically used to section off different parts of an HTML file. div is classified as a non-semantic element, as its tag name does not serve to describe the contents within it.
@@ -39,7 +39,7 @@
       In regards to attributes, values are the parameters at which the attributes will operate. An example is when you wanted to assign a specific width or height to an element, you could add the attributes width="###" and height="###" (# being the number).
 
     What is the “query string” in a URL and what does it do?
-
+      When a user submits a form on a web page, it will create a query string where the information the user submitted is encoded for the server to be able to read and interpret the information.
 
     What is the difference between “pixels” and “ems”?
       A pixel is a static unit used to define the element's size.
@@ -48,7 +48,7 @@
           -If the font-size is set to 20px, 2em's would mean that: 20px * 2 = 40px.
 
     How do CSS styles for a particular element get inherited? i.e. how does an element get its “default” styles?
-
+      HTML and CSS follow what is typically referred to as a parent-child relationship. Elements will inherit the styles of the element which it is nested in.
 
     What are two CSS attributes you can change to push an element around on the page?
       There are a couple, but two of them would be the position and float attributes.
@@ -69,4 +69,4 @@
         margin: 0;
         padding: 0;
         }
-        at the begining of their CSS document.
+        at the beginning of their CSS document.
