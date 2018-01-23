@@ -228,7 +228,7 @@ This amalgamates these properties:
     no-repeat - which shows just one instance of the image
   background-position - which can be top, center, bottom, left, right, a length, or a percentage, or any sensible combination, such as top right.
 
-It can actually be used tro specify a few other background features too, notably attachment, clip, origin, and size (see the background property reference (http://www.htmldog.com/references/css/properties/background/) for the nitty-gritty), but lets not get carried away just yet -- color, image, repeat, and position are by far the most fundamental aspects that you will want to manipulate most often.
+It can actually be used to specify a few other background features too, notably attachment, clip, origin, and size (see the background property reference (http://www.htmldog.com/references/css/properties/background/) for the nitty-gritty), but lets not get carried away just yet -- color, image, repeat, and position are by far the most fundamental aspects that you will want to manipulate most often.
 
   Background-images can be used in most HTML elements - not just for the whole page (body) and can be used for simple but effective results. As an example, background images are used on this web site as the bullets in lists, as the magnifying glass in the search box, and as the icons in the top left corner of some notes, such as this one.
 

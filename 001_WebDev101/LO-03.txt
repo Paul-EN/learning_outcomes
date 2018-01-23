@@ -1,0 +1,95 @@
+JavaScript Basics - Fundamentals 1
+
+Learning Outcomes
+
+Look through these now and then use them to test yourself after doing the assignment:
+
+    How do you declare a variable in javascript?
+      In order to declare a variable, you must used the "=" operator to assign the value to the variable.
+        Ex: var x = 20;
+
+    What are three different ways to declare a variable?
+      There are three different ways to declare variables: 'var', which is the original way of doing it, but now there is also the 'let' and 'const'. Each have their own purpose.
+
+    Which one should you use when?
+      It is recommended that the variables 'let' and 'const' be used depending on the need. Variable 'var' is an arcane type of variables that is now discourages.
+
+      On the surface, 'let' and 'var' behave very similarly, but 'var' has two key differences to 'let' being:
+        1. 'var' variables have no block scope, they are visible minimum at the function level
+        2. 'var' variable declarations are processed at function start
+
+      The 'let' variable can be used as the general all-purpose variable. It is changeable.
+      The 'const' variable behaves the same as 'let', except that is is constant, and cannot be changed.
+
+    What are the rules for naming variables?
+      There are two main rules to naming variables due to limitations:
+        1. The name must contain only letters, digits, and symbols $ and _.
+        2. The first character must not be a digit.
+        -There is also the general convention that if there are multiple words, the first word must be lowercase with the following words having only their first letter capitalized.
+        -Variable names are also case sensitive. So apple and ApplE are two different variables.
+        -Non-English letters are allowed, but not recommended.
+        -There is a set of reserved names, such as: let, class, return, function, etc. Using these to name your variables will result in a syntax error.
+        -The general convention for naming hard-to-remember constants is to use uppercase and underscores. Ex: const COLOR_RED = "#F00";
+
+    What are operators, operands, and operations?
+      |------------------Operation------------------|
+      |  | Operand |   | Operator |   | Operand |   |
+      |  |    5    |   |    +     |   |    7    |   |
+      |---------------------------------------------|
+
+    What is concatenation and what happens when you add numbers and strings together?
+      Concatenation is when two strings are combined together.
+        Ex: var x = "10"; //string
+            var y = "20"; //string
+            var z = x + y;
+            var z = "1020"; //results in a combined string
+      It is also possible to add a number with a string.
+        Ex: var x = 10;   //number
+            var y = "20"; //string
+            var z = x + y;
+            var z = "1020" //results in a combined string
+
+    What are the different type of operators in Javascript?
+      Ex: + addition          % modulus (remainder)
+          - subtraction       ++ increment
+          * multiplication    -- decrement
+          / division          () parenthesis
+
+    What is the difference between == and ===?
+      == simply checks that the two values are equal
+      === checks that the two values are equal and that they are of the same type
+
+    What are operator precedence values?
+      Similar to what we were taught in math class, we first multiply and/or divide before adding and/or subtracting. Operators are assigned a certain value and depending on this value is the order in which they will be executed.
+
+    What are the increment/decrement operators?
+      The increment and decrement operators will either add or subtract a 1 from value they are assigned to execute on. *Important: increment/decrement operators cannot be applied directly to to numbers and may only be applied to assigned variables.
+        Ex: 3++; //results in an error
+            var num1 = 2;
+            num1++; // results in 3
+
+    What is the difference between prefixing and postfixing them?
+      When prefixing an increment/decrement, the result will be the updated value.
+      When postfixing an increment/decrement, the result will be the original value, but once you call on the variable, it will then show updated.
+
+    What are assignment operators?
+      Assignment operators work as shorter alternative to a couple operations.
+      +=, -=, *=, /=
+      Ex:
+        Regular version:
+          var x = 3;
+          x = x + 4;
+          When x is called, the value will now display as 7
+        With Assignment Operator:
+          var x = 3;
+          x += 4; //Results instantly appears as 7
+
+    What is the “Unary +” Operator?
+      When used on numbers, it does nothing but result in the original value.
+        Ex: let x = 1;
+            alter( +x ); //Results in 1;
+            let y = -2;
+            alter( +y ); //Results in -2;
+      When used on a anything that is not a number, it converts it into a number value.
+        Ex: alert( +true ); //Results in 1
+            alert( +"" ); //Results in 0
