@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Concatenation in context</title>
+  </head>
+  <body>
+    <button>Press me</button>
+    <script>
+      var button = document.querySelector('button');
+
+      button.onclick = function() {
+        var name = prompt('What is your name?') /* Asks the user to create an input, then stores the input in a variable. */
+        alert('Hello ' + name + ', nice to see you!'); /* Takes the stored input variable and concatenates it with two other string literals. */
+      }
+    </script>
+  </body>
+</html>
