@@ -3,20 +3,137 @@ Learning Outcomes
 Look through these now and then use them to test yourself after doing the assignment:
 
     What are the seven data types of javascript?
+      JavaScript's seven data types are:
+        String - Typically text
+        Number - Numerical values
+        Boolean - true/false values
+        Object - A variable that contains multiple other variables within, aka properties.
+        Array - An assortment of values or reserved memory
+        Null - No valid string, number, boolean, array, or object. Can be used to erase contents of a variable by assigning it null.
+        Undefined - A variable that has been declared without a value or an object property that doesn't exit.
+
     Which data type is NOT primitive?
+        Boolean and array are composite data types as they can comprise of multiple values.
+        Null and undefined are considered special data types as they can serve as placeholders for non-existent values.
+
     What is the difference between single, double, and backtick quotes for strings?
+        There is very little difference between single and double quotes, and both can be interchanged. Although, when using single quotes, you may run into problems with punctuation marks for example:
+          let string0 = 'That's great'; Here the computer will think the quote is only 'That'
+            A way around this is to escape the quote with a \
+              let string0 = 'That\'s great';
+          let string1 = "That's great"; Here the computer will have no issue recognizing the quote
+
+        Backtick quotes can be used to identify template literals, which allow you to use them as multi-line and can include "interpolation" to insert the content of variables.
+        Example:
+          var name = "Paul";
+          var phrase = "What is your name?";
+          var string = `Hi, my name is ${name}.
+                        ${phrase}`
+          This will return:
+            Hi, my name is Paul.
+            What is your name?
+
     Which type of quote lets you embed variables/expressions into a string?
+        The backtick quote as explained in the previous question.
+
     How do you embed variables/expressions into a string?
+        ${variable name here}
+
     How do you escape characters in a string?
+        By using backslash \
+
     What is the difference between slice/substring/substr?
+        slice and substring are very similar in that they both have the same format for parameters (start, end), but they differ in how they interpret negative numbers.
+        With slice, if you use a negative number to start, it will begin counting from the end of the string.
+        With substring, it will simply default to the beginning of the string.
+
+        With substr, the format is a little different. Here we specify the start and the how many characters we want to extract after it. If a negative start value is entered, it begins counting from the end of the string.
+        Example:
+          String.substr(start, length);
+
     What are methods?
+        Methods are actions that can be performed on objects.
+        For example:
+          var message = "HeLlO wOrLd"
+          var x = message.toLowerCase();
+          // x results as "hello world"
+
     What are the three logical operators and what do they stand for?
+        && - AND - is used when you want both (or more) conditions to all be true
+        || - OR  - is used when you want at least one of both (or more) conditions to be true
+        !  - NOT - is used when you want to specify the opposite boolean value (i.e. true becomes false and false-true)
+
     What are the comparison operators?
+        ==  returns true if both variables are the same value
+        === returns true if both variables are the same value and type
+        !=  returns true if both variables are not the same
+        !== returns true if both variables are not the same value or type
+        >   greater than
+        >=  equal to or greater than
+        <   less than
+        <=  equal to or less than
+
     What is nesting?
+        Nesting is when you put piece of code inside another piece of code.
+        Example 1:
+          <p>This is a <strong>test</strong></p>
+            Here the bold tags are nesting inside the paragraph tags.
+        Example 2:
+          if (x > y) {
+            if (b == a) {
+              return a;
+            } else {
+                return x;
+              }
+          } else if (c != d) {
+              return y;
+            } else {
+                return z;
+              }
+            Here, an if and else statement is nested within another if statement with its own else if and else statements afterwards.
+
     What are truthy and falsy values?
+        A truthy value is a value that translates to true when evaluated in a Boolean context.
+        A falsy value is a value that translates to false.
+        Example:
+        let x = new Boolean(1); // 1 is true, so truthy
+        let x = new Boolean("Hello"); // true, so truthy
+        let x = new Boolean("0"); // "0" is a valid string which is true, so truthy
+        let x = new Boolean(0); // 0 is false, so falsy
+        let x = new Boolean(""); // "" is a blank string which is false, so falsy
+
     What are the falsy values in Javascript?
+        falsy values are false, 0, "" (blank string), null, undefined, NaN (Not-a-Number), and document.all [1].
+
     What is the syntax for an if/else if/else conditional?
+        if (condition) {
+          code to execute;
+        } else if (condition) {
+          code to execute if first condition is not met;
+        } else {
+          last code alternative to execute if no other conditions are met;
+        }
+
     What is the syntax for a switch statement?
+        switch (expression) {
+          case (condition):
+            code to execute;
+            break; // ends switch iteration if case condition is met and code is executed
+          case (condition):
+            code to execute if condition of the previous case is not met;
+            break;
+          default:
+            code to execute if conditions of all other cases are not met;
+        }
+
     What is the syntax for a ternary operator?
+        let variable1 = (condition) ? code to execute if condition is met : code to execute if condition is not met;
+
     What is the relationship between null and undefined?
+        null is a special type of object that represents 'no value'
+          let x = null; // x is assigned no value
+        undefined is a variable that has been declared but has no specified value.
+          let x; // x exists, but has no value
+
     What are conditionals?
+        Conditionals are the if, else if, else, and switch statements used to perform different actions based on different conditions.
