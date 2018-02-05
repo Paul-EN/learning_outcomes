@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Fundamentals Part 3 - Practice</title>
+  </head>
+  <body>
+    <button>Press me</button>
+    <script>
+      /*
+      function checkAge(age) {
+        Original
+        if (age > 18) {
+          return true;
+        } else {
+            return confirm('Do you have your parents\' permission to access this page?');
+          }
+
+        1) Using a question mark operator '?'
+        return (age > 18 ? true : 'Do you have your parents\' permission to access this page?');
+
+        2) Using OR ||
+        return (age > 18) || confirm('Do you have your parents\' permission to access this page?');
+      }
+      */
+
+      /* Write a function min(a,b) which returns the least of two numbers a and b.
+      function min(a, b) {
+        return (a < b ? a : b); // Parenthesis were not needed.
+      }
+      */
+
+      /* Write a function pow(x,n) that returns x in power n. Or, in other words, multiplies x by itself n times and returns the result. */
+      function isNatural(n) {
+        return n > 0 && Math.floor(n) === +n;
+      }
+
+      let x = prompt('Enter a number');
+      let n = prompt('Enter a natural number 1 or greater.', 1);
+      alert(pow(x, n));
+
+      function pow(x, n) {
+        if (isNatural(n)) {
+          return x ** n;
+        } else {
+            return 'Not a natural number 1 or greater.';
+          }
+      }
+    </script>
+  </body>
+</html>
