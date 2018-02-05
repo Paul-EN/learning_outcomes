@@ -1,0 +1,51 @@
+<!-- JavaScript Fundamentals Part 3 - Problems -->
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>JS Fundamentals Part 3 - Problems</title>
+  </head>
+  <body>
+    <h1>JS Fundamentals Part 3 - Problems</h1>
+    <button class="ques1">Add 7</button>
+    <button class="ques2">Multiply</button>
+    <button class="ques3">Capitalize</button>
+    <button class="ques4">Last Letter</button>
+
+    <script>
+      var button1 = document.querySelector('.ques1');
+      button1.onclick = function() {
+        let a = parseInt(prompt('Enter a number!'));
+        let add7 = (a) => a += 7;
+        alert('Result: ' + add7(a));
+      }
+
+      var button2 = document.querySelector('.ques2');
+      button2.onclick = function () {
+        let a = prompt('Enter the first number');
+        let b = prompt('Enter the second number');
+        let multiply = (a, b) => a * b;
+        alert('Result: ' + multiply(a, b));
+      }
+
+      var button3 = document.querySelector('.ques3');
+      button3.onclick = function () {
+        let ans = prompt('Write something!');
+        function capFirst(x) {
+          let y = x.toLowerCase();
+          let result = y.replace(y.charAt(0), y.charAt(0).toUpperCase());
+          return result;
+        }
+        alert('Result: ' + capFirst(ans));
+      }
+
+      var button4 = document.querySelector('.ques4');
+      button4.onclick = function() {
+        let entry = prompt('Write something!');
+        let lastLetter = (str) => str.charAt(str.length - 1);
+        alert('Result: ' + lastLetter(entry));
+      }
+    </script>
+  </body>
+
+</html>

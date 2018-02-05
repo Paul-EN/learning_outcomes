@@ -1,5 +1,7 @@
 JavaScript Notes
 
+Summary 1
+
 A function declaration looks like this:
   function name(parameters, delimited, by, comma) {
     /* code */
@@ -18,3 +20,21 @@ Function Naming:
   -There exist many well-known function prefixes like create..., show..., get..., check..., and so on. Use them to hint what a function does.
 
 Functions are the main building blocks of scripts. Now we've covered the basics, so we actually can start creating and using them. But that's only the beginning of the path. We are going to return to them many times, going more deeply into their advanced features.
+
+-------------------------------
+
+Summary 2
+
+  -Functions are values. They can be assigned, copied or declared in any place of the code.
+  -If the function is declared as a separate statement in the main code flow, that's called a "Function Declaration".
+  -If the functiuon is created as a part of an expression, it's called a "Function Expression".
+  -Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
+  -Function Expressions are created when the execution flow reaches them.
+
+In most cases when we need to declare a function, a Function Declaration is preferable, because it is visible prior to the declaration itself. That gives us more flexibility in code organization, and is usually more readable.
+
+So we should use a Function Expression only when a Function Declaration is not fit for the task.
+
+Arrow functions are handy for one-liners. They come in two flavors:
+  1. Without figure brackets: (...args) => expressions - the right side is an expression: the function evaluates it and returns the result.
+  2. With figure brackets: (...args) => { body } - brackets allow us to write multiple statements inside the function, but we need an explicit return to return something.

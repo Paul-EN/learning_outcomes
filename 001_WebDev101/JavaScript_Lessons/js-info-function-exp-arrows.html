@@ -1,0 +1,34 @@
+<!-- JavaScript.info - Function Expressions and Arrows -->
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    'use strict';
+
+    /* My solution */
+    let conf = confirm('Do you agree?');
+
+    let ask = (conf) ?
+      () => alert('You agreed.') :
+      () => alert('You canceled the execution.');
+
+    ask();
+
+    /* Provided solution
+    function ask (question, yes, no) {
+      if (confirm(question)) yes()
+      else no();
+    }
+
+    ask(
+      "Do you agree?",
+      () => alert('You agreed.'),
+      () => alert('You canceled the execution.')
+    );
+    */
+
+  </script>
+</body>
+
+</html>
