@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <div style='text-align:center'>
+      <h1 style='font-family:Arial,Helvetica,sans-serif'>Play Rock Paper Scissors!</h1>
+      <button>Start Game</button>
+    </div>
+    <script>
+      let button = document.querySelector('button');
+      button.onclick = function game() {
+
+        function computerPlay() {
+          let num = Math.floor((Math.random() * 3) + 1);
+          if (num == 1) {
+            return 'Rock';
+          } else if (num == 2) {
+              return 'Paper';
+            } else {
+                return 'Scissors';
+              }
+        }
+
+        function playRound() {
+          let playerSelection = prompt('Enter: Rock, Paper, or Scissors!');
+          let a = playerSelection.toLowerCase();
+          let b = computerPlay().toLowerCase();
+          let win = 'Player: ' + a + ' | ' + 'Computer: ' + b + '. ' + 'You win!';
+          let lose = 'Player: ' + a + ' | ' + 'Computer: ' + b + '. ' + 'You lost!';
+          let tie = 'Player: ' + a + ' | ' + 'Computer: ' + b + '. ' + 'It\'s a tie!';
+
+          if (!(a === b)) {
+            if (a === 'rock') {
+              if (b === 'scissors') {
+                alert(win);
+                console.log(win);
+                return ++playerWins;
+              } else if (b === 'paper') {
+                  alert(lose);
+                  console.log(lose);
+                  return ++computerWins;
+                }
+            } else if (a === 'paper') {
+                if (b === 'rock') {
+                  alert(win);
+                  console.log(win);
+                  return ++playerWins;
+                } else if (b === 'scissors') {
+                    alert(lose);
+                    console.log(lose);
+                    return ++computerWins;
+                  }
+              } else if (a === 'scissors') {
+                  if (b === 'paper') {
+                    alert(win);
+                    console.log(win);
+                    return ++playerWins;
+                  } else if (b === 'rock') {
+                      alert(lose);
+                      console.log(lose);
+                      return ++computerWins;
+                    }
+                } else {
+                    alert('Invalid entry!');
+                    console.log('Invalid entry!');
+                  }
+          } else if (a === b) {
+              alert(tie);
+              console.log(tie);
+              return ++roundTies;
+            }
+        }
+
+        let playerWins = 0;
+        let computerWins = 0;
+        let roundTies = 0;
+
+        function rounds(x) {
+          for (let i = 0; i < x; i++) {
+            console.log(playRound());
+          }
+        }
+
+        function checkScore(playerWins, computerWins, roundTies) {
+          let scoreBoard = 'Player: ' + playerWins + ' | ' + 'Computer: ' + computerWins + ' | ' + 'Ties: ' + roundTies;
+          if (playerWins > computerWins) {
+            alert(scoreBoard + '. ' + 'You Win!');
+            console.log(scoreBoard + '. ' + 'You Win!');
+          } else if (playerWins < computerWins) {
+            alert(scoreBoard + '. ' + 'You Lose!');
+            console.log(scoreBoard + '. ' + 'You Lose!');
+          } else if (playerWins == computerWins) {
+            alert(scoreBoard + '. ' + 'It\'s a tie!');
+            console.log(scoreBoard + '. ' + 'It\'s a tie!');
+          }
+        }
+
+        rounds(5);
+        checkScore(playerWins, computerWins, roundTies);
+      }
+    </script>
+  </body>
+</html>
