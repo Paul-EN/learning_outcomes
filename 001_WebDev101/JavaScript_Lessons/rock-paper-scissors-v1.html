@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <script>
+        function computerPlay() {
+          let num = Math.floor((Math.random() * 3) + 1);
+          if (num == 1) {
+            return 'Rock';
+          } else if (num == 2) {
+              return 'Paper';
+            } else {
+                return 'Scissors';
+              }
+        }
+
+        function playRound() {
+          let playerSelection = prompt('Enter: Rock, Paper, or Scissors!');
+          let a = playerSelection.toLowerCase();
+          let b = computerPlay().toLowerCase();
+          let win = 'Player: ' + a + ' | ' + 'Computer: ' + b + '. ' + 'You win!';
+          let lose = 'Player: ' + a + ' | ' + 'Computer: ' + b + '. ' + 'You lost!';
+          let tie = 'Player: ' + a + ' | ' + 'Computer: ' + b + '. ' + 'It\'s a tie! Play again.';
+
+          if (!(a === b)) {
+            if (a === 'rock') {
+              if (b === 'scissors') {
+                alert(win);
+                return true;
+              } else if (b === 'paper') {
+                  alert(lose);
+                  return false;
+                }
+            } else if (a === 'paper') {
+                if (b === 'rock') {
+                  alert(win);
+                  return true;
+                } else if (b === 'scissors') {
+                    alert(lose);
+                    return false;
+                  }
+              } else if (a === 'scissors') {
+                  if (b === 'paper') {
+                    alert(win);
+                    return true;
+                  } else if (b === 'rock') {
+                      alert(lose);
+                      return false;
+                    }
+                }
+          } else {
+              alert(tie);
+            }
+        }
+
+        let playerWins = 0;
+        let computerWins = 0;
+        let scoreBoard = playerWins + ' | ' + computerWins;
+
+        for (let i = 0; i < 5; i++) {
+          if (playRound() == true) {
+            playerWins += 1;
+          } else if (playRound() == false) {
+            computerWins += 1;
+          }
+        }
+        alert(scoreBoard);
+    </script>
+  </body>
+</html>
